@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://3sdr2xh67gcl"]
+
+[ext_resource type="Texture2D" uid="uid://dfklw6kur58cg" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_Guide.png" id="1_uwrxv"]
+
+[node name="Main" type="Node" unique_id=1025192536]
+
+[node name="Backround" type="Sprite2D" parent="." unique_id=1370077166]
+texture_filter = 1
+scale = Vector2(4.201087, 4.2019234)
+texture = ExtResource("1_uwrxv")
+offset = Vector2(184, 104)
