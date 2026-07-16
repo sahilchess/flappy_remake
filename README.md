@@ -1,9 +1,11 @@
 # flappy_remake
 a remake of flappy bird that has a cool hero and is just better than normal flappy bird (lol)
 
+### [try it here](https://sahilchess.itch.io/flappy-remake)
+
 <img width="2500" height="auto" alt="image" src="https://github.com/user-attachments/assets/8e29053b-993f-43cb-879e-562015774449" />
 
-### [try it here](https://sahilchess.itch.io/flappy-remake)
+
 
 ## wut this
 a remake of flappy bird with different assets and some personalization
