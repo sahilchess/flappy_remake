@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="onekey"
+config/name="flappy remake"
 run/main_scene="uid://3sdr2xh67gcl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
@@ -20,6 +20,10 @@ window/size/viewport_width=1546
 window/size/viewport_height=874
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+pipes=""
 
 [physics]
 

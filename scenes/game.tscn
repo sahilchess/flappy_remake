@@ -1,11 +1,52 @@
 [gd_scene format=3 uid="uid://3sdr2xh67gcl"]
 
+[ext_resource type="Script" uid="uid://c6ry5ijw2ea2n" path="res://scripts/main.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dfklw6kur58cg" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_Guide.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dwawrfs15c7yx" path="res://scenes/pipe.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://xoms4q00yyov" path="res://scenes/hero.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://ds2n2vhg2s8r6" path="res://scenes/ground.tscn" id="4_lbhrr"]
+[ext_resource type="FontFile" uid="uid://h177a1ed432n" path="res://assets/free-pixel-art-tiny-hero-sprites/Font/Planes_ValMore.ttf" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://d4kie3i2so4cb" path="res://scenes/game_over.tscn" id="7_u5sy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mi8v4"]
+font = ExtResource("6_p57ef")
+font_size = 46
 
 [node name="Main" type="Node" unique_id=1025192536]
+script = ExtResource("1_lnu2h")
+pipe_scene = ExtResource("2_iywne")
 
 [node name="Backround" type="Sprite2D" parent="." unique_id=1370077166]
 texture_filter = 1
-scale = Vector2(4.201087, 4.2019234)
+position = Vector2(-22.999998, -9)
+scale = Vector2(4.2010865, 4.2019234)
 texture = ExtResource("1_uwrxv")
 offset = Vector2(184, 104)
+
+[node name="ground" parent="." unique_id=245755958 instance=ExtResource("4_lbhrr")]
+
+[node name="hero" parent="." unique_id=418292087 instance=ExtResource("3_lbhrr")]
+
+[node name="pipetimer" type="Timer" parent="." unique_id=806228324]
+wait_time = 1.5
+
+[node name="score" type="Label" parent="." unique_id=2016280057]
+z_index = 30
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 48.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "SCORE : 67"
+label_settings = SubResource("LabelSettings_mi8v4")
+
+[node name="GameOver" parent="." unique_id=1469619430 instance=ExtResource("7_u5sy4")]
+
+[connection signal="hit" from="ground" to="." method="_on_ground_hit"]
+[connection signal="timeout" from="pipetimer" to="." method="_on_pipetimer_timeout"]
+[connection signal="restart" from="GameOver" to="." method="_on_game_over_restart"]

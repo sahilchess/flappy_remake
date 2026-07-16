@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ds2n2vhg2s8r6"]
+
+[ext_resource type="Script" uid="uid://25jkawupw37q" path="res://scripts/ground.gd" id="1_mi8v4"]
+[ext_resource type="Texture2D" uid="uid://bplg0nw4ji3j7" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_5.png" id="2_lmksl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ouyb"]
+size = Vector2(1546.5, 253.5)
+
+[node name="ground" type="Area2D" unique_id=245755958]
+script = ExtResource("1_mi8v4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993249917]
+position = Vector2(772, 938.75)
+shape = SubResource("RectangleShape2D_7ouyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1849020671]
+position = Vector2(1281.0001, 1147)
+scale = Vector2(6.8451085, 1)
+texture = ExtResource("2_lmksl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dwawrfs15c7yx"]
+
+[ext_resource type="Script" uid="uid://ck1afq1q1h7lq" path="res://scripts/pipe.gd" id="1_8p0di"]
+[ext_resource type="Texture2D" uid="uid://dpj061ee0tsdf" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Props/GrassLand_Entry_3.png" id="2_ejsh2"]
+[ext_resource type="Texture2D" uid="uid://brcs261up5xqt" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Props/GrassLand_Entry_2.png" id="3_4ybk5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjnaj"]
+radius = 127.0
+height = 772.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hokwi"]
+radius = 124.0
+height = 772.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wt3f"]
+size = Vector2(92, 1024)
+
+[node name="pipe" type="Area2D" unique_id=877411301 groups=["pipes"]]
+script = ExtResource("1_8p0di")
+
+[node name="top" type="Sprite2D" parent="." unique_id=2117995265]
+texture_filter = 1
+scale = Vector2(16.812498, 29.585938)
+texture = ExtResource("2_ejsh2")
+centered = false
+offset = Vector2(0, -25)
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1935914067]
+position = Vector2(135, -355)
+shape = SubResource("CapsuleShape2D_vjnaj")
+
+[node name="bottom" type="Sprite2D" parent="." unique_id=1539391402]
+texture_filter = 1
+position = Vector2(-2.384186e-07, 0)
+rotation = 6.2831855
+scale = Vector2(16.80538, 29.578005)
+texture = ExtResource("3_4ybk5")
+centered = false
+offset = Vector2(0, 5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=175873903]
+position = Vector2(134, 710)
+shape = SubResource("CapsuleShape2D_hokwi")
+
+[node name="scorearea" type="Area2D" parent="." unique_id=2056313609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scorearea" unique_id=1516464371]
+position = Vector2(323, 117)
+shape = SubResource("RectangleShape2D_1wt3f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="scorearea" to="." method="_on_scorearea_body_entered"]
