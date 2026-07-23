@@ -9,7 +9,7 @@ a remake of flappy bird that has a cool hero and is just better than normal flap
 
 ## wut this
 a remake of flappy bird with different assets and some personalization
-a super duper cool game that only uses one key made for [stardance](stardance.space)
+a super duper cool game that only uses one key made for [stardance](https://stardance.space)
 
 ## features
 - one key controls everything
